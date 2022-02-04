@@ -2,6 +2,10 @@
 
 Cloudflare Workers と [Hono](https://github.com/yusukebe/hono)を使ったサンプルコンテンツです。
 
+こちらの URL にデプロイしています（僕が消すまで見れます！）。
+
+- <https://iekei.yusukebe.workers.dev/>
+
 ## Features
 
 以下の特徴があります。
