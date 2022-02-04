@@ -4,11 +4,6 @@ import { serveStatic } from 'hono/serve-static'
 
 const app = new Hono()
 
-app.use('*', async (c, next) => {
-  const ip = c.req.headers.get('X-Forwarded-For')
-  console.log(`Access from ${ip}`)
-  await next()
-})
 app.use('*', mustache({ root: 'view' }))
 app.use('/static/*', serveStatic({ root: 'public' }))
 
