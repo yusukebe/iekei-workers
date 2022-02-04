@@ -1,0 +1,12 @@
+{{> header}}
+<h1>家系ラーメン食べたい！</h1>
+
+<ul>
+  {{#ies}}
+  <li>
+    <a href="/ie/{{ name }}">{{ title }}</a>
+  </li>
+  {{/ies}}
+</ul>
+
+{{> footer}}
