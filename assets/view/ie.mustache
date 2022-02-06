@@ -1,4 +1,10 @@
 {{>header}}
-<h2>{{title}}</h2>
-<p><img src="/static/{{ image }}" /></p>
+<h2>{{ title }}</h2>
+<p>
+<amp-img alt="{{ title }}"
+  src="/static/{{ image }}"
+  width="600"
+  height="450"
+  layout="responsive">
+</amp-img>
 {{>footer}}
