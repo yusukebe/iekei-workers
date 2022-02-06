@@ -1,4 +1,13 @@
+name = "iekei"
+type = "javascript"
+
 compatibility_date = "2022-02-03"
 
 [site]
 bucket = "./assets"
+
+[build]
+command = "yarn run build"
+
+[build.upload]
+format = "service-worker"

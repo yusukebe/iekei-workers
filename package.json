@@ -1,13 +1,15 @@
 {
   "name": "ramen",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "wrangler dev index.js",
-    "publish": "wrangler publish index.js --name 'ramen'"
+    "build": "esbuild --bundle --sourcemap --outdir=dist ./src/index.js",
+    "dev": "miniflare --live-reload --watch --debug",
+    "publish": "wrangler publish dist/index.js"
   },
   "devDependencies": {
+    "miniflare": "^2.2.0",
     "wrangler": "^0.0.15"
   },
   "dependencies": {
