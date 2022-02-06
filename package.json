@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "esbuild --bundle --sourcemap --outdir=dist ./src/index.js",
+    "build:production": "esbuild --bundle --sourcemap --minify --outdir=dist ./src/index.js",
     "dev": "miniflare --live-reload --watch --debug",
     "publish": "wrangler publish dist/index.js"
   },

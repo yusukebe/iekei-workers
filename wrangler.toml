@@ -7,7 +7,7 @@ compatibility_date = "2022-02-03"
 bucket = "./assets"
 
 [build]
-command = "yarn run build"
+command = "yarn run build:production"
 
 [build.upload]
 format = "service-worker"
