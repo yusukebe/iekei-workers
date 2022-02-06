@@ -6,6 +6,14 @@ import { ies } from './ies'
 const app = new Hono()
 
 app.use('*', mustache({ root: 'view' }))
+app.use('/static/*', async (c, next) => {
+  await next()
+  if (c.res.headers.get('Content-Type').match(/image/)) {
+    c.header('Cache-Control', 'public, max-age=86400')
+    c.header('X-Custom', 'Hello')
+  }
+})
+
 app.use('/static/*', serveStatic({ root: 'public' }))
 
 const partials = { header: 'header', footer: 'footer' }
