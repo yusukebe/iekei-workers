@@ -1,16 +1,15 @@
 import React, { FC } from 'react'
-import type { IE } from '../model'
+import type { Data } from '../model'
 import Layout from '../components/layout'
-// import Head from '../components/head'
 
 type Props = {
-  ies: IE[]
+  data: Data
 }
 
 const Index: FC<Props> = (props) => {
-  const { ies } = props
+  const ies = props.data.contents
   return (
-    <Layout title="家系ラーメン食べたい！" image="/static/yoshimura.jpg">
+    <Layout title='家系ラーメン食べたい！' image='/static/yoshimura.jpg'>
       <h2>家系リスト</h2>
       <ul>
         {ies.map((ie) => {

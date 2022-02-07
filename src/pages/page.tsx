@@ -1,20 +1,20 @@
 import React, { FC } from 'react'
-import type { IE } from '../model'
+import type { Data } from '../model'
 import Layout from '../components/layout'
 
 type Props = {
-  ie: IE
+  data: Data
 }
 
 const Page: FC<Props> = (props) => {
-  const { title, image, name } = props.ie
+  const ie = props.data.contents[0]
   return (
-    <Layout title={title} image={`/static/${image}`}>
-      <h2>{title}</h2>
+    <Layout title={ie.title} image={`${ie.image.url}?w=600`}>
+      <h2>{ie.title}</h2>
       <p>
         <img
-          alt={title}
-          src={`/static/${image}`}
+          alt={ie.title}
+          src={`${ie.image.url}?w=600`}
           width='600'
           height='450'
           style={{ width: '100%', height: 'auto', maxWidth: '600px' }}

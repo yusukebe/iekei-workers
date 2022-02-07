@@ -1,38 +1,49 @@
-export type IE = {
-  name: string
-  image: string
-  title: string
+declare const X_MICROCMS_API_KEY: string
+const END_POINT = 'https://iekei.microcms.io/api/v1/ies'
+
+export type Image = {
+  url: string
+  height: number
+  with: number
 }
 
-export const ies: IE[] = [
-  {
-    name: 'yoshimura',
-    image: 'yoshimura.jpg',
-    title: '吉村家',
-  },
-  {
-    name: 'sugita',
-    image: 'sugita.jpg',
-    title: '杉田家',
-  },
-  {
-    name: 'takasago',
-    image: 'takasago.jpg',
-    title: 'たかさご家',
-  },
-  {
-    name: 'joujou',
-    image: 'joujou.jpg',
-    title: '上々家',
-  },
-  {
-    name: 'rasuta',
-    image: 'rasuta.jpg',
-    title: 'らすた',
-  },
-  {
-    name: 'dontokoi',
-    image: 'dontokoi.jpg',
-    title: 'どんとこい家',
-  },
-]
+export type Content = {
+  id: string
+  createdAt: string
+  updatedAt: string
+  publishedAt: string
+  revisedAt: string
+  name: string
+  title: string
+  image: Image
+  description: string
+}
+
+export type Data = {
+  contents: Content[]
+  totalCount: number
+  offset: number
+  limit: number
+}
+
+export const getIes = async (): Promise<Data> => {
+  const url = new URL(END_POINT)
+  return await getData(url)
+}
+
+export const getIeByName = async (name: string): Promise<Data> => {
+  const url = new URL(END_POINT)
+  url.searchParams.append('filters', `name[equals]${name}`)
+  return await getData(url)
+}
+
+const getData = async (url: URL): Promise<Data> => {
+  const request = new Request(url.toString(), {
+    headers: {
+      'X-MICROCMS-API-KEY': X_MICROCMS_API_KEY,
+    },
+  })
+  const response = await fetch(request)
+  const data: Data = await response.json()
+  return data
+}

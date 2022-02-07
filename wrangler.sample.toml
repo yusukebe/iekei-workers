@@ -3,11 +3,14 @@ type = "javascript"
 
 compatibility_date = "2022-02-03"
 
+[vars]
+X_MICROCMS_API_KEY = ""
+
 [site]
 bucket = "./assets"
 
 [build]
-command = "yarn run build:production"
+command = "yarn run build"
 
 [build.upload]
 format = "service-worker"

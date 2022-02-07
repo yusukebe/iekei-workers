@@ -1,7 +1,6 @@
 import React from 'react'
 import Footer from './footer'
 import Header from './header'
-import Head from './head'
 
 import { FC } from 'react'
 
@@ -21,7 +20,8 @@ const Layout: FC<Props> = ({ title, image, children }) => {
         <meta property='og:type' content='article' />
         <meta property='og:title' content={title} />
         <meta property='og:site_name' content='家系ラーメン食べたい！' />
-        <meta property='og:image' content={`/static/${image}`} />
+        <meta property='og:image' content={`${image}`} />
+        <meta name='twitter:card' content='summary_large_image' />
       </head>
       <body>
         <div id='root' style={{ margin: '1em 2em' }}>
