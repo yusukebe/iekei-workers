@@ -1,0 +1,21 @@
+name = "iekei"
+type = "javascript"
+
+compatibility_date = "2022-02-03"
+
+kv_namespaces = [
+  { binding = "IEKEI", id = "", preview_id = "" }
+]
+
+[vars]
+X_MICROCMS_API_KEY = ""
+X_MICROCMS_WEBHOOK_SECRET = ""
+
+[site]
+bucket = "./assets"
+
+[build]
+command = "yarn run build"
+
+[build.upload]
+format = "service-worker"
