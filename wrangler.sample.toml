@@ -9,6 +9,7 @@ kv_namespaces = [
 
 [vars]
 X_MICROCMS_API_KEY = ""
+X_MICROCMS_WEBHOOK_SECRET = ""
 
 [site]
 bucket = "./assets"

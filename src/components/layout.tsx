@@ -15,6 +15,7 @@ const Layout: FC<Props> = ({ title, image, children }) => {
       <head>
         <title>{title}</title>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link rel='icon' href='/favicon.ico' />
         <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css' />
         <head prefix='og: http://ogp.me/ns#' />
         <meta property='og:type' content='article' />

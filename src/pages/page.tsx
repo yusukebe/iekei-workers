@@ -20,6 +20,7 @@ const Page: FC<Props> = (props) => {
           style={{ width: '100%', height: 'auto', maxWidth: '600px' }}
         />
       </p>
+      <blockquote>{ie.description}</blockquote>
     </Layout>
   )
 }

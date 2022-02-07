@@ -1,4 +1,4 @@
-import { getIeByName, getIes } from './model'
+import { getIeByName, getIes, purgeKV } from './model'
 
 describe('mode.ts', () => {
   it('getIes', async () => {
@@ -19,5 +19,9 @@ describe('mode.ts', () => {
     const data = await getIeByName('xxx')
     expect(data).not.toBeNull()
     expect(data.totalCount).toBe(0)
+  })
+
+  it('purgeKV', async () => {
+    purgeKV()
   })
 })

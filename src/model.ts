@@ -58,3 +58,10 @@ const getData = async (url: URL): Promise<Data> => {
   const data: Data = JSON.parse(json)
   return data
 }
+
+export const purgeKV = async () => {
+  const list = await IEKEI.list({ prefix: KV_PREFIX })
+  for (const key of list.keys) {
+    await IEKEI.delete(key.name)
+  }
+}
