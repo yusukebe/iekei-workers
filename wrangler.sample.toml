@@ -3,6 +3,10 @@ type = "javascript"
 
 compatibility_date = "2022-02-03"
 
+kv_namespaces = [
+  { binding = "IEKEI", id = "", preview_id = "" }
+]
+
 [vars]
 X_MICROCMS_API_KEY = ""
 
