@@ -1,4 +1,10 @@
-export const ies = [
+export type IE = {
+  name: string
+  image: string
+  title: string
+}
+
+export const ies: IE[] = [
   {
     name: 'yoshimura',
     image: 'yoshimura.jpg',
