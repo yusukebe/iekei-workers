@@ -13,6 +13,7 @@ Cloudflare Workers と [Hono](https://github.com/yusukebe/hono)を使ったサ�
 - [Hono](https://github.com/yusukebe/hono) を使っている。
 - `serve-static` Middleware で静的コンテンツ（ラーメン写真）を配信。
 - `mustache` Middleware で mustache をテンプレートエンジンとして HTML を描画。
+- コンテンツmicroCMSで管理。
 - 開発・デプロイには Wrangler 2.0 を使用。
 
 ## Usage

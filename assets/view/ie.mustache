@@ -1,6 +1,9 @@
 {{>header}}
 <h2>{{ title }}</h2>
 <p>
-  <img alt="{{ title }}" src="/static/{{ image }}" width="600" height="450" layout="intrinsic" />
+  <img alt="{{ title }}" src="{{{ image.url }}}" width="{{ image.width }}" height="{{ image.height }}" />
 </p>
+<blockquote>
+  {{ description }}
+</blockquote>
 {{>footer}}

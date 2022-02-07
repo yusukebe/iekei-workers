@@ -3,24 +3,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css" />
     {{#title}}
-    <title>{{title}} - 家系ラーメン食べたい！</title>
-    {{/title}}
-    {{^title}}
-    <title>家系ラーメン食べたい！</title>
-    {{/title}}
-
-    {{#title}}
+    <title>{{ title }} - 家系ラーメン食べたい！</title>
     <meta property="og:title" content="{{title}}">
     {{/title}}
     {{^title}}
+    <title>家系ラーメン食べたい！</title>
     <meta property="og:title" content="家系ラーメン食べたい！">
     {{/title}}
+    {{#description}}
+    <meta name="description" content="{{ description }}" />
+    <meta property="og:description" content="{{ description }}" />
+    {{/description}}
+
     {{#image}}
-    <meta property="og:image" content="https://iekei.yusukebe.workers.dev/static/{{image}}">
+    <meta property="og:image" content="{{{ image.url }}}">
     {{/image}}
     {{^image}}
     <meta property="og:image" content="https://iekei.yusukebe.workers.dev/static/yoshimura.jpg">
     {{/image}}
+    
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="家系ラーメン食べたい！">
 
