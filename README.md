@@ -11,7 +11,7 @@ Cloudflare Workers と [Hono](https://github.com/yusukebe/hono)を使ったサ�
 以下の特徴があります。
 
 - [Hono](https://github.com/yusukebe/hono) を使っている。
-- React RSS している（クライアントは何もしてない）。
+- React SSR している（クライアントは何もしてない）。
 - microCMS でコンテンツを管理。
 - API レスポンスは KV でキャッシュ。
 - Webhook を受け取って、キャッシュをパージ。
