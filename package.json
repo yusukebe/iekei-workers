@@ -4,10 +4,8 @@
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
-    "build": "esbuild --bundle --sourcemap --outdir=dist ./src/index.tsx",
-    "build:production": "esbuild --bundle --sourcemap --minify --outdir=dist ./src/index.tsx",
-    "dev": "miniflare --live-reload --watch --debug",
-    "publish": "wrangler publish dist/index.js",
+    "dev": "wrangler dev ./src/index.tsx",
+    "publish": "wrangler publish ./src/index.tsx",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest --verbose"
   },
   "devDependencies": {
@@ -19,8 +17,7 @@
     "esbuild-jest": "^0.5.0",
     "jest": "^27.5.0",
     "jest-environment-miniflare": "^2.2.0",
-    "miniflare": "^2.2.0",
-    "wrangler": "^0.0.15"
+    "wrangler": "^0.0.16"
   },
   "dependencies": {
     "hono": "^0.3.7",

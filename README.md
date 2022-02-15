@@ -14,8 +14,8 @@ Cloudflare Workers と [Hono](https://github.com/yusukebe/hono)を使ったサ�
 - React SSR している（クライアントは何もしてない）。
 - microCMS でコンテンツを管理。
 - API レスポンスは KV でキャッシュ。
-- Webhook を受け取って、キャッシュをパージ。
-- 開発に mifnilare 2.x、デプロイには Wrangler 2.0 を使用。
+- Webhook を受け取ってキャッシュをパージ。
+- 開発・デプロイに Wrangler 2.0 を使用
 
 ## Usage
 

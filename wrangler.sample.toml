@@ -13,9 +13,3 @@ X_MICROCMS_WEBHOOK_SECRET = ""
 
 [site]
 bucket = "./assets"
-
-[build]
-command = "yarn run build"
-
-[build.upload]
-format = "service-worker"
