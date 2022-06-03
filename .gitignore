@@ -4,3 +4,6 @@ worker
 package-lock.json
 yarn.lock
 wrangler.toml
+
+build
+.cache
