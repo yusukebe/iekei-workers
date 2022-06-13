@@ -14,6 +14,7 @@ Cloudflare Workers と [Hono](https://github.com/yusukebe/hono)を使ったサ�
 - JSXミドルウェアを使ってSSRしている。
 - microCMSでコンテンツを管理。
 - APIレスポンスはKVでキャッシュ。
+- HTMLはCache APIでキャッシュ。
 - Webhookを受け取ってキャッシュをパージ。
 - 開発・デプロイにWrangler2.0を使用
 

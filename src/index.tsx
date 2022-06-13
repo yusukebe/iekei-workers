@@ -12,6 +12,18 @@ declare const X_MICROCMS_WEBHOOK_SECRET: string
 
 const app = new Hono()
 
+app.get('*', async (c, next) => {
+  const key = c.req.url
+  const cache = caches.default
+  const response = await cache.match(key)
+  if (!response) {
+    await next()
+    c.event.waitUntil(cache.put(key, c.res.clone()))
+  } else {
+    return response
+  }
+})
+
 app.use('/static/*', serveStatic({ root: 'public' }))
 app.use('/favicon.ico', serveStatic({ root: 'public' }))
 
