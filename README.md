@@ -11,10 +11,9 @@ Cloudflare Workers と [Hono](https://github.com/yusukebe/hono)を使ったサ�
 以下の特徴があります。
 
 - [Hono](https://github.com/yusukebe/hono) を使っている。
-- ReactSSRしている（クライアントは何もしてない）。
+- JSXミドルウェアを使ってSSRしている。
 - microCMSでコンテンツを管理。
 - APIレスポンスはKVでキャッシュ。
-- HTMLはCache APIでキャッシュ。
 - Webhookを受け取ってキャッシュをパージ。
 - 開発・デプロイにWrangler2.0を使用
 
@@ -23,14 +22,14 @@ Cloudflare Workers と [Hono](https://github.com/yusukebe/hono)を使ったサ�
 手元での立ち上げ方。
 
 ```
-$ yarn install
-$ yarn run dev
+yarn install
+yarn run dev
 ```
 
 公開までしちゃう。
 
 ```
-$ yarn run publish
+yarn run publish
 ```
 
 ## Author

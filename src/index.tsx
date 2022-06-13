@@ -1,11 +1,10 @@
 import { Hono } from 'hono'
+import { jsx } from 'hono/jsx'
 import { serveStatic } from 'hono/serve-static'
 import { verify } from './utils'
 
 import { getIes, getIeByName, purgeKV } from './model'
 
-import React from 'react'
-import { render } from './renderer'
 import Index from './pages/index'
 import Page from './pages/page'
 
@@ -13,25 +12,12 @@ declare const X_MICROCMS_WEBHOOK_SECRET: string
 
 const app = new Hono()
 
-app.get('*', async (c, next) => {
-  const key = c.req.url
-  const cache = caches.default
-  const response = await cache.match(key)
-  if (!response) {
-    await next()
-    c.event.waitUntil(cache.put(key, c.res.clone()))
-  } else {
-    return response
-  }
-})
-
 app.use('/static/*', serveStatic({ root: 'public' }))
 app.use('/favicon.ico', serveStatic({ root: 'public' }))
 
 app.get('/', async (c) => {
   const data = await getIes()
-  const page = render(<Index data={data} />)
-  return c.html(page)
+  return c.html(<Index data={data} />)
 })
 
 app.get('/ie/:name', async (c) => {
@@ -40,8 +26,7 @@ app.get('/ie/:name', async (c) => {
   if (data.totalCount === 0) {
     return c.text('家系 is Not Found', 404)
   }
-  const page = render(<Page data={data} />)
-  return c.html(page)
+  return c.html(<Page data={data} />)
 })
 
 app.post('/webhook', async (c) => {

@@ -1,12 +1,8 @@
-import React, { FC } from 'react'
+import { jsx } from 'hono/jsx'
 import type { Data } from '../model'
 import Layout from '../components/layout'
 
-type Props = {
-  data: Data
-}
-
-const Page: FC<Props> = (props) => {
+const Page = (props: { data: Data }) => {
   const ie = props.data.contents[0]
   return (
     <Layout title={ie.title} image={`${ie.image.url}?w=600`}>

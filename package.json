@@ -1,5 +1,5 @@
 {
-  "name": "ramen",
+  "name": "iekei",
   "version": "0.0.1",
   "main": "dist/index.js",
   "license": "MIT",
@@ -11,18 +11,14 @@
   "devDependencies": {
     "@cloudflare/workers-types": "^3.3.1",
     "@types/jest": "^27.4.0",
-    "@types/react": "^17.0.39",
-    "@types/react-dom": "^17.0.11",
-    "@types/react-helmet": "^6.1.5",
+    "esbuild": "^0.14.43",
     "esbuild-jest": "^0.5.0",
     "jest": "^27.5.0",
     "jest-environment-miniflare": "^2.2.0",
-    "wrangler": "^2.0.7"
+    "miniflare": "^2.5.0",
+    "wrangler": "^2.0.9"
   },
   "dependencies": {
-    "hono": "^1.4.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0"
+    "hono": "^1.4.7"
   }
 }

@@ -1,13 +1,9 @@
-import React from 'react'
+import { html } from 'hono/html'
 
-const Footer = () => {
-  return (
-    <footer>
-      <address>
-        Built with <a href='https://github.com/yusukebe/hono'>Hono</a>
-      </address>
-    </footer>
-  )
-}
+const Footer = () => html`
+  <footer>
+    <address>Built with <a href="https://github.com/yusukebe/hono">Hono</a></address>
+  </footer>
+`
 
 export default Footer
